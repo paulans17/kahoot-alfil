@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Kahoot Gran Hotel Alfil
+    match /games/{pin} {
+      allow read: if true;
+      allow create, update: if true;
+
+      match /players/{playerId} {
+        allow read: if true;
+        allow create: if request.resource.data.name is string
+                      && request.resource.data.name.size() <= 20;
+        allow update: if true;
+      }
+
+      match /answers/{answerId} {
+        allow read: if true;
+        // Una sola respuesta por jugador y pregunta: no se puede cambiar
+        allow create: if request.resource.data.choice is int
+                      && request.resource.data.choice >= 0
+                      && request.resource.data.choice <= 3;
+        allow update, delete: if false;
+      }
+    }
+
+    // ⚠️ Si el proyecto ya tiene otras reglas, deja aquí las suyas y añade solo el bloque de arriba.
+  }
+}
