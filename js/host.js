@@ -1,5 +1,5 @@
-import { db, doc, collection, setDoc, getDoc, updateDoc, onSnapshot, query, where, writeBatch, serverTimestamp, SHAPES, points, esc } from "./fb.js?v=5";
-import { QUESTIONS } from "./questions.js?v=5";
+import { db, doc, collection, setDoc, getDoc, updateDoc, onSnapshot, query, where, writeBatch, serverTimestamp, SHAPES, points, esc } from "./fb.js?v=6";
+import { QUESTIONS } from "./questions.js?v=6";
 
 const $ = id => document.getElementById(id);
 const views = ["hStart", "hLobby", "hQ", "hRev", "hBoard", "hEnd"];
