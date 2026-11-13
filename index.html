@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#6e1a33" />
+  <title>Gran Hotel Alfil · Kahoot</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="player">
+  <div class="frame">
+    <!-- Unirse -->
+    <section id="vJoin" class="center" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:22px">
+      <div class="brand">
+        <div class="kicker">Protocolo XXII · Alfil Juvenil</div>
+        <h1>Gran Hotel <em>Alfil</em></h1>
+        <div class="sub">Concurso en recepción</div>
+      </div>
+      <div class="card">
+        <input id="inPin" inputmode="numeric" maxlength="6" placeholder="PIN del juego" autocomplete="off" />
+        <input id="inName" maxlength="20" placeholder="Tu nombre" autocomplete="off" />
+        <button id="btnJoin" class="btn block">Entrar al hotel</button>
+        <div id="joinErr" class="err"></div>
+      </div>
+    </section>
+
+    <!-- Espera -->
+    <section id="vWait" class="hidden center" style="width:100%">
+      <div class="topbar"><span id="wName"></span><span id="wScore"></span></div>
+      <img src="img/reloj.svg" alt="" style="width:140px;margin-top:30px" />
+      <div class="bigmsg" id="waitMsg">¡Estás dentro!</div>
+      <p class="muted" id="waitSub">Mira la pantalla grande. Enseguida empezamos.</p>
+    </section>
+
+    <!-- Pregunta -->
+    <section id="vQ" class="hidden" style="width:100%">
+      <div class="topbar"><span id="qNum"></span><span id="qTime"></span></div>
+      <div class="ptq" id="qText"></div>
+      <div class="answers" id="qAnswers"></div>
+    </section>
+
+    <!-- Resultado -->
+    <section id="vRes" class="hidden center" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="topbar"><span id="rName"></span><span id="rScore"></span></div>
+      <div id="resBox" class="result" style="margin-top:30px"></div>
+      <p class="score" id="rRank" style="margin-top:20px"></p>
+    </section>
+  </div>
+  <script type="module" src="js/player.js"></script>
+</body>
+</html>

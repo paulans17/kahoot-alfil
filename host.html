@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gran Hotel Alfil · Pantalla</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body class="host">
+  <div class="frame">
+    <img class="clock tl" src="img/reloj.svg" alt="" />
+    <img class="clock br" src="img/reloj.svg" alt="" />
+
+    <!-- Inicio -->
+    <section id="hStart" class="center" style="margin-top:12vh">
+      <div class="brand">
+        <div class="kicker">Protocolo XXII · Alfil Juvenil</div>
+        <h1>Gran Hotel <em>Alfil</em></h1>
+        <div class="sub">El concurso surrealista de recepción</div>
+      </div>
+      <div class="controls" style="justify-content:center">
+        <button id="btnCreate" class="btn gold">Abrir partida</button>
+        <button id="btnResume" class="btn hidden">Retomar partida</button>
+      </div>
+      <p class="muted" id="qInfo" style="margin-top:14px"></p>
+    </section>
+
+    <!-- Sala de espera -->
+    <section id="hLobby" class="hidden center" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="brand">
+        <div class="kicker">Entra desde el móvil</div>
+        <h1 id="joinUrl" style="font-size:1.8rem"></h1>
+      </div>
+      <div class="pinbox">
+        <div><div class="muted" style="font-weight:700;letter-spacing:.2em">PIN</div><div class="pin" id="pin"></div></div>
+        <div class="qr" id="qr"></div>
+      </div>
+      <div class="count"><b id="nPlayers">0</b>huéspedes registrados</div>
+      <div class="names" id="names"></div>
+      <div class="controls"><button id="btnStartGame" class="btn gold">Empezar</button></div>
+    </section>
+
+    <!-- Pregunta -->
+    <section id="hQ" class="hidden" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="hostbar">
+        <div class="timer" id="timer">20</div>
+        <div class="muted serif" id="qCounter" style="font-size:1.4rem"></div>
+        <div class="count"><b id="nAns">0</b>respuestas</div>
+      </div>
+      <h2 class="qtitle" id="qTitle"></h2>
+      <div class="answers" id="qAnswers"></div>
+      <div class="controls"><button id="btnSkip" class="btn">Cerrar pregunta</button></div>
+    </section>
+
+    <!-- Resultado pregunta -->
+    <section id="hRev" class="hidden" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <h2 class="qtitle" id="rTitle"></h2>
+      <div class="bars" id="bars"></div>
+      <div class="answers" id="rAnswers"></div>
+      <div class="controls"><button id="btnToBoard" class="btn gold">Clasificación</button></div>
+    </section>
+
+    <!-- Clasificación -->
+    <section id="hBoard" class="hidden" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="brand"><div class="kicker">Libro de huéspedes</div><h1>Clasificación</h1></div>
+      <div class="board" id="board"></div>
+      <div class="controls"><button id="btnNext" class="btn gold">Siguiente pregunta</button></div>
+    </section>
+
+    <!-- Final -->
+    <section id="hEnd" class="hidden" style="width:100%;display:flex;flex-direction:column;align-items:center">
+      <div class="brand"><div class="kicker">Check-out</div><h1>Los huéspedes de <em>honor</em></h1></div>
+      <div class="podium" id="podium"></div>
+      <div class="board" id="restBoard" style="margin-top:30px"></div>
+      <div class="controls"><button id="btnNew" class="btn">Nueva partida</button></div>
+    </section>
+  </div>
+  <script type="module" src="js/host.js"></script>
+</body>
+</html>
