@@ -31,3 +31,12 @@ Acierto = entre 500 y 1000 puntos según lo rápido que respondas. Fallo o sin r
 
 Plan gratuito de Firebase (Spark): con 130 alumnos y ~20 preguntas se gastan unas 15.000 lecturas y 6.000 escrituras,
 por debajo del límite diario (50.000 / 20.000). Mejor no hacer muchas pruebas grandes el mismo día del curso.
+
+## Si cambias preguntas o código
+
+GitHub Pages cachea los archivos ~10 minutos. Después de editar, sube el número `?v=2` → `?v=3`
+en `index.html`, `host.html` y en los `import` de `js/*.js`, para que todos carguen la versión nueva.
+
+## Prueba de carga
+
+`node tools/simular.mjs <PIN> 120` mete 120 alumnos falsos que responden solos (Node 18+, sin instalar nada).

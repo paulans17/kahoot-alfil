@@ -165,3 +165,10 @@ input:focus { outline: 3px solid var(--oro); }
 .result.ko { background: var(--ko); }
 .result h2 { font-size: 2.2rem; }
 .topbar { width: 100%; display: flex; justify-content: space-between; font-weight: 700; color: var(--granate); margin-bottom: 10px; }
+
+/* Ajustes proyector: botones siempre visibles, nombres con scroll, relojes solo en portada */
+.host .controls { position: fixed; bottom: 26px; right: 34px; margin: 0; z-index: 5; }
+.host .names { max-height: 30vh; overflow: hidden; }
+body.playing .clock { display: none; }
+.host .bars { height: 32vh; }
+.host #rAnswers .ans { min-height: 70px; font-size: 1.3rem; }

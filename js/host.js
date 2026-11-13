@@ -1,9 +1,9 @@
-import { db, doc, collection, setDoc, getDoc, updateDoc, onSnapshot, query, where, writeBatch, serverTimestamp, SHAPES, points, esc } from "./fb.js";
-import { QUESTIONS } from "./questions.js";
+import { db, doc, collection, setDoc, getDoc, updateDoc, onSnapshot, query, where, writeBatch, serverTimestamp, SHAPES, points, esc } from "./fb.js?v=2";
+import { QUESTIONS } from "./questions.js?v=2";
 
 const $ = id => document.getElementById(id);
 const views = ["hStart", "hLobby", "hQ", "hRev", "hBoard", "hEnd"];
-const show = v => views.forEach(x => $(x).classList.toggle("hidden", x !== v));
+const show = v => { views.forEach(x => $(x).classList.toggle("hidden", x !== v)); document.body.classList.toggle("playing", !["hStart", "hLobby"].includes(v)); };
 
 let pin = null, game = null;
 let players = new Map();     // id -> data
@@ -78,7 +78,8 @@ function showLobby() {
 function renderLobby() {
   $("nPlayers").textContent = players.size;
   if (game && game.state === "lobby") {
-    $("names").innerHTML = [...players.values()].map(p => `<span class="chip">${esc(p.name)}</span>`).join("");
+    const all = [...players.values()];
+    $("names").innerHTML = all.slice(-60).reverse().map(p => `<span class="chip">${esc(p.name)}</span>`).join("");
   }
 }
 
