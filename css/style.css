@@ -172,3 +172,8 @@ input:focus { outline: 3px solid var(--oro); }
 body.playing .clock { display: none; }
 .host .bars { height: 32vh; }
 .host #rAnswers .ans { min-height: 70px; font-size: 1.3rem; }
+
+/* Móvil: respuestas en una columna para que quepan las largas */
+.player .answers { grid-template-columns: 1fr; gap: 10px; }
+.player .ans { min-height: 64px; font-size: 1.05rem; padding: 14px 16px; }
+.player .ans .shape { font-size: 1.6rem; width: 28px; text-align: center; flex: none; }
