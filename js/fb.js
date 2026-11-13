@@ -3,7 +3,7 @@ import {
   getFirestore, doc, collection, setDoc, getDoc, updateDoc, onSnapshot,
   query, where, writeBatch, serverTimestamp, getDocs
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { firebaseConfig } from "./config.js";
+import { firebaseConfig } from "./config.js?v=2";
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
